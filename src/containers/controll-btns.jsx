@@ -4,7 +4,7 @@ import "../styles/controll-btns.css"
 
 const ControllBtns = () => {
   const { page } = useParams()
-  const [pages, setPages] = useState(parseInt(page)) // ParseInt para asegurarse de que sea un número
+  const [pages, setPages] = useState(parseInt(page))
 
   const upPage = () => {
     setPages(pages + 1)
@@ -12,7 +12,7 @@ const ControllBtns = () => {
 
   return (
     <div className="controll-container">
-      <Link className="controll-btn" to={`/store/${pages - 1}`}>Back</Link>
+      <Link className="controll-btn" to={page === 1 ? null : `/store/${pages - 1}`}>Back</Link>
       <Link className="controll-btn" to={`/store/${pages + 1}`} onClick={upPage}>
         Next
       </Link>
