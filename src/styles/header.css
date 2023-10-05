@@ -1,0 +1,44 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #16181c;
+    border-radius: 0 0 1rem 1rem;
+    width: auto;
+}
+
+.header-btn{
+    color: whitesmoke;
+    padding: 1.5rem;
+    transition: 0.5s;
+    width: auto;
+}
+
+.search{
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.searching{
+    display: flex;
+    gap: 1rem;
+}
+
+.header-btn-active{
+    color: #0dd4ec;
+    padding: 1.5rem;
+    transition: 0.5s;
+    width: auto;
+}
+
+.header-btn:hover{
+    color: #0dd4ec;
+    transition: 0.5s;
+}

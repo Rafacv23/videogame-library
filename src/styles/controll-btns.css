@@ -1,0 +1,14 @@
+.controll-container{
+    background-color: #313348;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.controll-btn{
+    padding: 1rem;
+    color: aliceblue;
+}
