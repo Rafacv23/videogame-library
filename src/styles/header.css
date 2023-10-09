@@ -42,3 +42,16 @@
     color: #0dd4ec;
     transition: 0.5s;
 }
+
+
+@media (max-width: 500px) {
+    .search{
+        width: 5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .search{
+        width: 3rem;
+    }
+}
