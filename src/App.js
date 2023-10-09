@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./styles/App.css"
 import Error from "./pages/error"
 import Home from "./pages/home.jsx"
@@ -11,16 +11,27 @@ import ScrollToUp from "./components/scroll-to-up"
 function App () {
   const [myGames, setMyGames] = useState([])
 
+  useEffect(() => {
+    // Cargar juegos desde localStorage al montar el componente
+    const myGamesFromLocalStorage = JSON.parse(localStorage.getItem("myGames")) || []
+    setMyGames(myGamesFromLocalStorage)
+  }, []) // El segundo argumento [] asegura que este efecto se ejecute solo una vez al montar el componente
+
   const buyGame = (gameDetails) => {
     const isGameAlreadyInMyGames = myGames.some((existingGame) => existingGame.id === gameDetails.id)
 
     if (isGameAlreadyInMyGames) {
+      // Eliminar el juego
       const updatedGames = myGames.filter((existingGame) => existingGame.id !== gameDetails.id)
+      localStorage.setItem("myGames", JSON.stringify(updatedGames))
       setMyGames(updatedGames)
       console.log("Deleted game:", gameDetails)
     } else {
-      setMyGames([...myGames, gameDetails])
-      console.log("Buyed Game:", gameDetails)
+      // Agregar el juego
+      const updatedGames = [...myGames, gameDetails]
+      localStorage.setItem("myGames", JSON.stringify(updatedGames))
+      setMyGames(updatedGames)
+      console.log("Bought Game:", gameDetails)
     }
   }
 
