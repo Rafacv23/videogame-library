@@ -10,9 +10,17 @@ const ControllBtns = () => {
     setPages(pages + 1)
   }
 
+  const downPage = () => {
+    if (pages > 1) {
+      setPages(pages - 1)
+    }
+  }
+
   return (
     <div className="controll-container">
-      <Link className="controll-btn" to={page === 1 ? null : `/store/${pages - 1}`}>Back</Link>
+      <Link className="controll-btn" to={pages === 1 ? "/store" : `/store/${pages - 1}`} onClick={downPage}>
+        Back
+      </Link>
       <Link className="controll-btn" to={`/store/${pages + 1}`} onClick={upPage}>
         Next
       </Link>
