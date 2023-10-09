@@ -38,7 +38,7 @@ function App () {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/store/:page" element={<Home/>}/>
-        <Route path="/game/:gameId" element={<GameDetails buyGame={buyGame}/>}/>
+        <Route path="/game/:gameId" element={<GameDetails myGames={MyGames} buyGame={buyGame}/>}/>
         <Route path="/library" element={<MyGames myGames={myGames} />}/>
         <Route path="*" element={<Error/>}/>
       </Routes>

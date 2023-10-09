@@ -3,7 +3,7 @@ import { getGameById, getGameAchievements, getGameVersions, getGamesBySaga } fro
 import { Link, useParams } from "react-router-dom"
 import "../styles/game-container.css"
 
-const GameContainer = ({ buyGame, isGameAlreadyInMyGames }) => {
+const GameContainer = ({ buyGame, myGames }) => {
   const [gameDetails, setGameDetails] = useState(null)
   const [achievements, setAchievements] = useState(null)
   const [versions, setVersions] = useState(null)
@@ -145,7 +145,7 @@ const GameContainer = ({ buyGame, isGameAlreadyInMyGames }) => {
                         : "metacritic-yellow"
                     : "metacritic-tbd"
                 } rel="noreferrer">{gameDetails.metacritic ? gameDetails.metacritic : "TBD"}</a>
-              <button className="buy-btn" onClick={() => buyGame(gameDetails)}>{isGameAlreadyInMyGames === true ? "Delete from my library" : "Add to my Library"}</button>
+              <button className="buy-btn" onClick={() => buyGame(gameDetails)}>Add to my Library</button>
             </div>
           </div>
       </div>
