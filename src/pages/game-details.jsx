@@ -1,10 +1,10 @@
 import React from "react"
 import GameContainer from "../containers/game-container"
 
-const GameDetails = () => {
+const GameDetails = ({ buyGame }) => {
   return (
         <div>
-            <GameContainer></GameContainer>
+            <GameContainer buyGame={buyGame}></GameContainer>
         </div>
   )
 }

@@ -14,7 +14,6 @@ const Home = () => {
       const data = await getGames(page)
       const game = data ? data.results : []
       setGames(game)
-      console.log(data.results)
     } catch (error) {
       console.error(error)
     }
@@ -35,23 +34,6 @@ const Home = () => {
                   </Link>
                   <div className="game-info">
                     <Link to={`/game/${game.id}`} className="game-name">{game.name}</Link>
-                    <ul className="game-tags">
-                      {game.tags.slice(0, 2).map((tag) => (
-                        <li className="tags" key={tag.id}>{tag.name}</li>
-                      ))}
-                    </ul>
-                    <div className="buttons-container">
-                    <a href={game.metacritic_url} target="_blank" className={
-                  game.metacritic
-                    ? game.metacritic >= 70
-                      ? "metacritic-green"
-                      : game.metacritic < 50
-                        ? "metacritic-red"
-                        : "metacritic-yellow"
-                    : "metacritic-tbd"
-                } rel="noreferrer">{game.metacritic ? game.metacritic : "TBD"}</a>
-                    <button className="buy-btn">Buy</button>
-                    </div>
                 </div>
                 </div>
               )) : <p>Loading, please wait</p>}

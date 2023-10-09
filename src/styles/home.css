@@ -28,14 +28,15 @@
     justify-content: center;
     gap: 0;
     width: 95%;
+    transition: 0.5s;
 }
 
 .game-img-home{
     border-radius: 0.5rem 0.5rem 0 0;
     width: 100%;
     transition: 0.5s;
-    max-width: auto;
-    max-height: auto;
+    max-height: 242px;
+    max-width: 500px;
 }
 
 .game-container:hover{
